@@ -5,8 +5,8 @@ PlayBook is a web application made on Rails, by which we can annotate and share 
 This application allows you to: 
 
 * Add Plays 
-* Browse Highlights 
+* Search Plays 
 * Modify Plays 
 * Remove Plays 
 
-Thanks to this application we can find many things that we know we can be very useful, since like installing any program to how to make iced tea xD
+Thanks to this application we can find many things we do not know, that we can be very useful for later, such as installing any program or how to make iced tea! xD
