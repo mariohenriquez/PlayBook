@@ -1,0 +1,28 @@
+<%= render :partial => "partial/header" %>
+
+<section>
+  <div class="container">
+    <ul class="task-list">
+    <% @tasks.each do |task| %>
+     <li class="panel panel-default">
+        <div class="panel-heading">
+          <%= link_to task_path(id: task.id) do  %>
+            <h3><%= task.title %></h3>
+          <% end -%>
+        </div>
+        <div class="panel-body">
+          <pre><%= task.description %></pre>
+          <hr>
+          <%= link_to "Edit", edit_task_path(id: task.id), class: "btn btn-primary btn-xs" %>
+          <%= link_to "Delete", task_path(id: task.id), method: "delete", data: { confirm: 'Are you sure?'}, class: "btn btn-danger btn-xs"%>
+          <div class="pull-right">
+            <%= task.created_at.strftime("%d %b. %y")%>
+          </div> 
+        </div>
+     </li>
+    <% end -%>
+    </ul>
+    
+  </div>
+</section>
+<%= render :partial => "partial/footer" %>

@@ -1,0 +1,60 @@
+// mixin
+@mixin inlineblock(){
+  display: inline-block;
+  vertical-align: top;
+}
+// end
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px;
+}
+section{
+  padding-top: 50px;
+  .container{padding-top: 20px;}
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  height: 60px;
+  background: #222222;
+}
+footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+  .text-muted {margin: 20px 0;}
+}
+.btn-played {
+  @include inlineblock();
+  margin: 10px 0;
+}
+.search-input {
+  @extend .btn-played;
+  width: inherit;
+}
+.search-btn{
+  @extend .btn-played;
+}
+.form-search{@include inlineblock();}
+.task-list {
+  padding: 0 0;
+  margin: 0 0;
+  list-style: none;
+  a{text-decoration: none;}
+  pre{
+    background: transparent;
+    border: 0;
+    padding: 0 0;
+  }
+  > li{
+    margin-bottom: 20px;
+    h3{
+      color: #000;
+      margin: 0 0;
+    }
+  }
+}

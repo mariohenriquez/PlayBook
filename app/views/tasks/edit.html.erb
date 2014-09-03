@@ -1,0 +1,18 @@
+<%= render :partial => "partial/header" %>
+<section>
+    <div class="container">
+        <%= form_for @task, class: "form-inline" do |form| %>
+            <div class="form-group">
+                <%= form.label :title %>
+                <%= form.text_field :title, class: "form-control" %>
+            </div>
+            <div class="form-goup">
+                <%= form.label :description %>
+                <%= form.text_area :description, class: "form-control" %>
+            </div>
+            <%= link_to "Back", tasks_path, class: "btn btn-default" %>
+            <%= form.submit "Edit", class: "btn btn-primary" %>
+        <% end -%>
+    </div>
+</section>
+<%= render :partial => "partial/footer" %>

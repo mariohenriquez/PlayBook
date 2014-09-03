@@ -1,0 +1,34 @@
+
+
+<header class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">PlayBook</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="pull-right">
+        <%= form_tag tasks_path, :method => 'get', class: "form-search" do %>
+            <%= text_field_tag :search, params[:search], class: "form-control search-input input-sm" %>
+            <%= submit_tag "Search", :name => nil, class: "btn btn-sm btn-success search-btn"  %>
+        <% end %>
+
+        <% if %>
+          <%= link_to "New Played", new_task_path, class: "btn btn-sm btn-primary btn-played" %>
+        <% else %>
+          <%= link_to "Back", tasks_path, class: "btn btn-sm btn-primary btn-played" %>
+        <% end  %>
+      </div>
+    </div>
+  </div>
+</header>
