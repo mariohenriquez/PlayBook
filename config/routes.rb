@@ -8,6 +8,9 @@ PlayBook::Application.routes.draw do
 
   resources :tasks
   root :to => 'tasks#index'
+  get 'about' => 'about#index', :as => :about
+  get 'contact' => 'contact#index', :as => :contact
+
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

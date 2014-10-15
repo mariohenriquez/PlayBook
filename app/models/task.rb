@@ -2,7 +2,7 @@ class Task < ActiveRecord::Base
   attr_accessible :description, :title
   def self.search(search)
     if search
-      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+      find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
     else
       find(:all)
     end

@@ -7,11 +7,7 @@ class TasksController < ApplicationController
     end
 
     def index
-        @tasks = Task.all || []
-    end
-    
-    def search
-        @tasks = Task.search(params[:search])
+        @tasks =  Task.search(params[:search])
     end
 
     def new
