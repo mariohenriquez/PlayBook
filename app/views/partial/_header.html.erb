@@ -17,7 +17,7 @@
         <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
-      <div class="pull-right">
+      <div class="pull-right search-section">
         <%= form_tag tasks_path, :method => 'get', class: "form-search" do %>
             <%= text_field_tag :search, params[:search], class: "form-control search-input input-sm" %>
             <%= submit_tag "Search", :name => nil, class: "btn btn-sm btn-success search-btn"  %>
