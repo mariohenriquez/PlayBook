@@ -15,7 +15,11 @@ class TasksController < ApplicationController
 
     def create
         @task = Task.new
-        @task.title = params[:task][:title]
+        if params[:task][:title] == params[:task][:title].upcase
+            @task.title = params[:task][:title]
+        else
+            @task.title = params[:task][:title].capitalize
+        end
         @task.description = params[:task][:description]
         @task.save
 
